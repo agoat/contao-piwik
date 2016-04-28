@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields'] = array_merge(
 			'inputType'     => 'checkbox',
 			'exclude'       => true,
 			'eval'          => array('submitOnChange'=>true),
-			'sql'			=> "char(1) NOT NULL default '0'"
+			'sql'			=> "char(1) NOT NULL default ''"
 		),
 		'piwikPath' => array(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_page']['piwikPath'],
@@ -179,13 +179,13 @@ $GLOBALS['TL_DCA']['tl_page']['fields'] = array_merge(
 			'inputType'		=> 'textarea',
 			'exclude'		=> true,
 			'eval'			=> array('tl_class'=>'long clr', 'alwaysSave'=>true),
-			'sql'			=> "text NULL",
 			'load_callback'	=> array(
 				array('tl_layout_PiwikTrackingTag', 'extensions')
 			),
 			'save_callback'	=> array(
 				array('tl_layout_PiwikTrackingTag', 'extensions')
-			)
+			),
+			'sql'			=> "text NULL"
 		),
 		
 		'piwikCatEnabled' => array(
