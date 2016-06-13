@@ -39,7 +39,7 @@ class Piwik extends Frontend
 				// 404 errors
 				if($siteDetails->piwik404 AND $objPage->type == 'error_404')
 				{
-					$jsTag .= ' _paq.push(["setDocumentTitle", "404/URL = " + encodeURIComponent(document.location.pathname+document.location.search) + "/From = " + encodeURIComponent(document.referrer) + "]);' . "\n";
+					$jsTag .= ' _paq.push(["setDocumentTitle", "404/URL = " + encodeURIComponent(document.location.pathname+document.location.search) + "/From = " + encodeURIComponent(document.referrer)]);' . "\n";
 				}
 				
 				// set document title
