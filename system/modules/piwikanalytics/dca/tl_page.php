@@ -19,13 +19,13 @@
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'piwikEnabled';
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace('{publish_legend}', '{piwik_legend},piwikEnabled;{publish_legend}', $GLOBALS['TL_DCA']['tl_page']['palettes']['root']);
-$GLOBALS['TL_DCA']['tl_page']['subpalettes']['piwikEnabled'] = 'piwikPath,piwikSiteID,piwikIgnoreMembers,piwikIgnoreUsers,piwikCustVarUserName,piwikCustVarLanguage,piwikPageTitle,piwikAddDomain,piwikAddSiteStructure,piwikDoNotTrack,piwikAllContentImpressions,piwikVisibleContentImpressions,piwik404,piwikCustVarUseCat,piwikCookieDomains,piwikDomains,piwikSubdomains,piwikExtensions,piwikCustVarVisitName,piwikCustVarVisitValue';
+$GLOBALS['TL_DCA']['tl_page']['subpalettes']['piwikEnabled'] = 'piwikPath,piwikSiteID,piwikIgnoreMembers,piwikIgnoreUsers,piwikCustVarUserName,piwikCustVarLanguage,piwikPageTitle,piwikAddDomain,piwikAddSiteStructure,piwikDoNotTrack,piwikAllContentImpressions,piwikVisibleContentImpressions,piwik404,piwikCookieDomains,piwikDomains,piwikSubdomains,piwikExtensions,piwikCustVarVisitName,piwikCustVarVisitValue';
 
 // regular page
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'piwikCatEnabled';
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['regular'] = str_replace('{publish_legend}', '{piwik_legend},piwikCatEnabled;{publish_legend}', $GLOBALS['TL_DCA']['tl_page']['palettes']['regular']);
-$GLOBALS['TL_DCA']['tl_page']['subpalettes']['piwikCatEnabled'] = 'piwikCustVarCatValue,piwikCustVarPageName,piwikCustVarPageValue';
+$GLOBALS['TL_DCA']['tl_page']['subpalettes']['piwikCatEnabled'] = 'piwikCustVarPageName,piwikCustVarPageValue';
 
 
 /**
@@ -124,13 +124,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields'] = array_merge(
 			'eval'			=> array('tl_class'=>'w50', 'maxlength'=>128),
 			'sql'			=> "varchar(128) NOT NULL default ''"
 		),
-		'piwikCustVarUseCat' => array(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_page']['piwikCustVarUseCat'],
-			'inputType'		=> 'checkbox',
-			'exclude'		=> true,
-			'eval'			=> array('tl_class'=>'w50'),
-			'sql'			=> "char(1) NOT NULL default '0'"
-		),
 		'piwikCookieDomains' => array(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_page']['piwikCookieDomains'],
 			'inputType'		=> 'checkbox',
@@ -176,9 +169,9 @@ $GLOBALS['TL_DCA']['tl_page']['fields'] = array_merge(
 		'piwikExtensions' => array(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_page']['piwikExtensions'],
 			'default'		=> '7z,aac,arc,arj,asf,asx,avi,bin,bz,bz2,csv,deb,dmg,doc,exe,flv,gif,gz,gzip,hqx,jar,jpg,jpeg,js,mp2,mp3,mp4,mpg,mpeg,mov,movie,msi,msp,odb,odf,odg,odp,ods,odt,ogg,ogv,pdf,phps,png,ppt,qt,qtm,ra,ram,rar,rpm,sea,sit,tar,tbz,tbz2,tgz,torrent,txt,wav,wma,wmv,wpd,xls,xml,z,zip',
-			'inputType'		=> 'textarea',
+			'inputType'		=> 'text',
 			'exclude'		=> true,
-			'eval'			=> array('tl_class'=>'long clr', 'alwaysSave'=>true),
+			'eval'			=> array('tl_class'=>'long clr'),
 			'load_callback'	=> array(
 				array('tl_layout_PiwikTrackingTag', 'extensions')
 			),
@@ -194,13 +187,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields'] = array_merge(
 			'exclude'       => true,
 			'eval'          => array('submitOnChange'=>true),
 			'sql'			=> "char(1) NOT NULL default '0'"
-		),
-		'piwikCustVarCatValue' => array(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_page']['piwikCustVarCatValue'],
-			'inputType'		=> 'text',
-			'exclude'		=> true,
-			'eval'			=> array('tl_class'=>'w50', 'maxlength'=>128),
-			'sql'			=> "varchar(128) NOT NULL default ''"
 		),
 		'piwikCustVarPageName' => array(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_page']['piwikCustVarPageName'],

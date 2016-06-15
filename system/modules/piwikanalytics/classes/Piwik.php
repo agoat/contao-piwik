@@ -123,16 +123,11 @@ class Piwik extends Frontend
 					$jsTag .= ' _paq.push(["setCustomVariable", 3, "' . $siteDetails->piwikCustVarVisitName . '", "' . $siteDetails->piwikCustVarVisitValue . '", "visit"]);' . "\n";
 				}
 				
-				// set page category
-				if($siteDetails->piwikCustVarUseCat && $pageDetails->piwikCatEnabled && $pageDetails->piwikCustVarCatValue) 
-				{
-					$jsTag .= ' _paq.push(["setCustomVariable", 1, "Category", "' . $pageDetails->piwikCustVarCatValue . '", "page"]);' . "\n";
-				}
 				
 				// set custom variable for page
-				if($siteDetails->piwikCustVarUseCat && $pageDetails->piwikCatEnabled && $pageDetails->piwikCustVarPageName && $pageDetails->piwikCustVarPageValue) 
+				if($pageDetails->piwikCatEnabled && $pageDetails->piwikCustVarPageName && $pageDetails->piwikCustVarPageValue) 
 				{
-					$jsTag .= ' _paq.push(["setCustomVariable", 2, "' .$pageDetails->piwikCustVarPageName . '", "' . $pageDetails->piwikCustVarPageValue . '", "page"]);' . "\n";
+					$jsTag .= ' _paq.push(["setCustomVariable", 1, "' .$pageDetails->piwikCustVarPageName . '", "' . $pageDetails->piwikCustVarPageValue . '", "page"]);' . "\n";
 				}
 				
 				// set download extensions (if not default)
