@@ -13,16 +13,16 @@
         <target>Fügt der Internetseite den Piwik-Javascript-Tag hinzu.</target>
       </trans-unit>
  	  <trans-unit id="tl_page.piwikIgnoreMembers.0">
-        <target>Benutzer ignorieren</target>
-      </trans-unit>
-      <trans-unit id="tl_page.piwikIgnoreMembers.1">
-        <target>Benutzer, die im Backend eingeloggt sind, werden ignoriert und nicht getrackt.</target>
-      </trans-unit>
-	  <trans-unit id="tl_page.piwikIgnoreUsers.0">
         <target>Mitglieder ignorieren</target>
       </trans-unit>
+      <trans-unit id="tl_page.piwikIgnoreMembers.1">
+        <target>Mitglieder, die im Frontend eingeloggt sind, werden ignoriert und nicht getrackt.</target>
+      </trans-unit>
+	  <trans-unit id="tl_page.piwikIgnoreUsers.0">
+        <target>Benutzer ignorieren</target>
+      </trans-unit>
       <trans-unit id="tl_page.piwikIgnoreUsers.1">
-        <target>Mitglieder, die im Backend eingeloggt sind, werden ignoriert und nicht getrackt.</target>
+        <target>Benutzer, die im Backend eingeloggt sind, werden ignoriert und nicht getrackt.</target>
       </trans-unit>
 	  <trans-unit id="tl_page.piwikPath.0">
         <target>URL der Piwik-Installation</target>
